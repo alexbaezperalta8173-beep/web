@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio - Brayan</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+color:white;
+background: linear-gradient(-45deg,#ff6a00,#ff00aa,#00c3ff,#00ffd5);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes fondo{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+text-align:center;
+padding:70px 20px 40px;
+font-size:55px;
+font-weight:bold;
+animation:fadeDown 1.5s ease;
+}
+
+@keyframes fadeDown{
+from{opacity:0; transform:translateY(-40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.container{
+width:85%;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:rgba(0,0,0,0.65);
+padding:50px;
+border-radius:25px;
+margin-bottom:60px;
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.card h2{
+margin-bottom:20px;
+color:#00ffd5;
+}
+
+.card p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+.skills{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:25px;
+}
+
+.skill{
+background:linear-gradient(45deg,#ff7300,#ff00aa);
+padding:15px;
+text-align:center;
+border-radius:12px;
+transition:0.3s;
+font-weight:bold;
+cursor:pointer;
+}
+
+.skill:hover{
+transform:scale(1.1);
+background:linear-gradient(45deg,#00c3ff,#00ffd5);
+}
+
+.bot-images{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:25px;
+}
+
+.bot-images img{
+width:180px;
+border-radius:15px;
+transition:0.3s;
+border:3px solid #00ffd5;
+}
+
+.bot-images img:hover{
+transform:scale(1.2);
+}
+
+.discord-section{
+text-align:center;
+margin:60px 0;
+}
+
+.discord-logo{
+width:90px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.discord-logo:hover{
+transform:scale(1.2);
+}
+
+/* MENÚ TECNOLOGÍA */
+.tech-menu{
+position:fixed;
+top:0;
+right:-400px;
+width:400px;
+height:100%;
+background: linear-gradient(-45deg,#ff6a00,#ff00aa,#00c3ff,#00ffd5);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
+transition:0.4s;
+padding:25px;
+z-index:999;
+overflow-y:auto;
+}
+
+.tech-menu.active{
+right:0;
+}
+
+.close{
+position:absolute;
+top:10px;
+left:15px;
+cursor:pointer;
+font-size:22px;
+}
+
+.tech-menu h3{
+margin-top:40px;
+margin-bottom:15px;
+}
+
+.tech-menu p{
+line-height:1.7;
+}
+</style>
+</head>
+<body>
+
+<div class="tech-menu" id="techMenu">
+<div class="close" onclick="cerrarMenu()">X</div>
+<h3 id="techTitle"></h3>
+<p id="techText"></p>
+</div>
+
+<header>Portafolio - Brayan</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Sobre Mí</h2>
+<p>
+Hola, soy Brayan, desarrollador profesional especializado en la creación de sistemas avanzados,
+plugins personalizados para servidores de Minecraft, bots profesionales para Discord
+y desarrollo web moderno completamente optimizado.
+</p>
+
+<p>
+Mi experiencia se centra en seguridad, optimización de rendimiento,
+estructuración de bases de datos eficientes y diseño de interfaces atractivas.
+Cada proyecto que desarrollo está pensado para ser escalable,
+estable y visualmente impactante.
+</p>
+
+<p>
+Trabajo constantemente en perfeccionar mis habilidades técnicas,
+aprendiendo nuevas tecnologías y adaptándome a los estándares actuales del desarrollo profesional.
+</p>
+</div>
+
+<div class="card">
+<h2>Lenguajes y Tecnologías</h2>
+<div class="skills">
+<div class="skill" onclick="abrirTech('Java')">Java</div>
+<div class="skill" onclick="abrirTech('JavaScript')">JavaScript</div>
+<div class="skill" onclick="abrirTech('Python')">Python</div>
+<div class="skill" onclick="abrirTech('C++')">C++</div>
+<div class="skill" onclick="abrirTech('C#')">C#</div>
+<div class="skill" onclick="abrirTech('PHP')">PHP</div>
+<div class="skill" onclick="abrirTech('HTML')">HTML</div>
+<div class="skill" onclick="abrirTech('CSS')">CSS</div>
+<div class="skill" onclick="abrirTech('SQL')">SQL</div>
+<div class="skill" onclick="abrirTech('TypeScript')">TypeScript</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Bots Profesionales</h2>
+<p>
+Desarrollo bots personalizados para comunidades y empresas,
+incluyendo sistemas avanzados de tickets,
+protección anti-raid, automatización inteligente,
+paneles administrativos y conexión con bases de datos.
+</p>
+
+<p>
+Cada bot es optimizado para funcionar 24/7,
+garantizando estabilidad, seguridad y eficiencia en grandes comunidades.
+</p>
+
+<div class="bot-images">
+<img src="https://cdn.discordapp.com/attachments/1470531682548453507/1473193292576456856/Screenshot_20260201-173432.jpg?ex=699551ab&is=6994002b&hm=1fd7fb2eeca03ad16d6698b049a87c021c20cd8c1979fb95cc1084f38d97fb42&">
+<img src="https://cdn.discordapp.com/attachments/1470531682548453507/1473193292236853271/Screenshot_20260201-173416.jpg?ex=699551ab&is=6994002b&hm=25148aa0b6515b44e1f87aaf5cb6230fca7fe813d8f08fbb98b9f61d75f0dd85&">
+</div>
+
+</div>
+
+</div>
+
+<div class="discord-section">
+<p>Haz clic para copiar mi usuario de Discord</p>
+<img class="discord-logo"
+src="https://cdn.discordapp.com/attachments/1470531682548453507/1473192886152462367/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png?ex=6995514a&is=6993ffca&hm=f54b75961317c7828413abef64f7d8a04940e8eece74b0534f34ee638ff5cbbc&"
+onclick="copiarUsuario()">
+</div>
+
+<script>
+function copiarUsuario(){
+navigator.clipboard.writeText("Brayandev_.");
+alert("Usuario copiado: Brayandev_.");
+}
+
+function abrirTech(nombre){
+let texto="";
+
+if(nombre=="Java") texto="Java es un lenguaje orientado a objetos ampliamente utilizado en servidores, aplicaciones empresariales y desarrollo de plugins para Minecraft.";
+if(nombre=="JavaScript") texto="JavaScript permite crear páginas web dinámicas, interactivas y modernas tanto en frontend como en backend.";
+if(nombre=="Python") texto="Python es un lenguaje versátil utilizado para automatización, bots, inteligencia artificial y desarrollo backend.";
+if(nombre=="C++") texto="C++ es un lenguaje potente utilizado en desarrollo de software de alto rendimiento y sistemas complejos.";
+if(nombre=="C#") texto="C# es utilizado principalmente en aplicaciones Windows, desarrollo de videojuegos y sistemas empresariales.";
+if(nombre=="PHP") texto="PHP es un lenguaje de servidor utilizado para crear páginas web dinámicas y conectar con bases de datos.";
+if(nombre=="HTML") texto="HTML estructura el contenido de las páginas web y define los elementos visuales.";
+if(nombre=="CSS") texto="CSS permite diseñar y estilizar páginas web con animaciones y efectos visuales.";
+if(nombre=="SQL") texto="SQL se utiliza para gestionar y consultar bases de datos de forma eficiente.";
+if(nombre=="TypeScript") texto="TypeScript es una versión mejorada de JavaScript que añade tipado estático y mayor seguridad en proyectos grandes.";
+
+document.getElementById("techTitle").innerText=nombre;
+document.getElementById("techText").innerText=texto;
+document.getElementById("techMenu").classList.add("active");
+}
+
+function cerrarMenu(){
+document.getElementById("techMenu").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
